@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+.container {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff;
+} 
+.content {
+    background-color: #fff;
+    border-radius: 15px;
+    width: 960px;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.content::before {
+    content: "";
+    position: absolute;
+    background-color: #a784c1;
+    width: 40%;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+
+
+    left: 0;
+
+}
+.title {
+    font-size: 28px;
+    font-weight: bold;
+
+}
+.title-primary {
+    color: #fff;
+}
+.title-second {
+    color: #a784c1;
+}
+.description {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 30px;
+}
+.description-primary {
+    color: #fff;
+}
+.description-second {
+    color: #7f8c8d;
+}
+.btn {
+    border-radius: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 10px;
+    padding: 10px 50px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 150px;
+    align-self: center;
+    margin-top: 1rem;
+}
+.btn-primary {
+    background-color: transparent;
+    border: 1px solid #fff;
+    transition: background-color .5s;
+}
+.list-social-media .item-social-media {
+    transition: background-color .5s;
+}
+.list-social-media .item-social-media:hover {
+    background-color: #d6c0e9; 
+    border: 1px solid #d6c0e9; 
+}
+.btn-primary:hover {
+    background-color: #fff;
+    color: #a784c1;
+}
+.btn-second {
+    background-color: #a784c1;
+    border: 1px solid #a784c1;
+}
+.btn-second:hover {
+    background-color: #fff;
+    border: 1px solid #a784c1;
+    color: #a784c1;
+    transition: background-color .5s;
+
+}
+
+.first-content {
+    display: flex;
+}
+.first-content .second-column {
+    z-index: 11;
+}
+.first-column {
+    text-align: center;
+    width: 40%;
+    z-index: 10;
+}
+.second-column {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.social-media {
+    margin: 1rem 0;
+}
+.list-social-media {
+    display: flex;
+    list-style-type: none;
+}
+.item-social-media {
+    border: 1px solid #a784c1;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    line-height: 45px;
+    text-align: center;
+    margin-left: 10px;
+}
+.item-social-media:not(:first-child) {
+    margin-left: 10px;
+}
+.item-social-media a {
+    color: #ebe4f1;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+}
+.form input {
+    height: 45px;
+    width: 100%;
+    border: none;
+    background:#ebe4f1;
+    padding: 10%;
+}
+.label-input {
+    background-color: #ebe4f1;
+    display: flex;
+    align-items: center;
+    margin: 8px;
+}
+.material-icons {
+    color: #7f8c8d;
+    padding: 0 5%;
+
+}
+.second-content {
+    position: absolute;
+    display: flex;
+
+}
+.second-content .first-column {
+    order: 2;
+    z-index: -1;
+}
+.second-content .second-column {
+    order: 1;
+    z-index: -1;
+}
+.password {
+    color:#34495e;
+    font-size: 14px;
+    margin: 15px 0;
+    text-align: center;   
+}
+
+
+.sign-in-js .first-content .first-column,
+.sign-in-js .first-content .second-column {
+    z-index: -1;
+}
+
+
+.sign-in-js .second-content .second-column {
+    z-index: 11;
+}
+.sign-in-js .second-content .first-column {
+    z-index: 13;
+}
+
+.sign-in-js .content::before {
+    left: 60%;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    animation: slidein 1.2s;
+
+    z-index: 12;
+}
+
+.sign-up-js .content::before {
+    animation: slideout 1.2s;
+
+    z-index: 12;
+}
+
+.sign-up-js .second-content .first-column,
+.sign-up-js .second-content .second-column {
+    z-index: -1;
+} 
+
+
+.sign-up-js .first-content .second-column {
+    z-index: 11;
+}
+
+.sign-up-js .first-content .first-column {
+    z-index: 13;
+}
+
+.sign-in-js .first-content .second-column {
+    z-index: -1;
+    position: relative;
+    animation: deslocamentoEsq 1.2s;
+}
+.sign-up-js .second-content .second-column {
+    position:relative;
+    z-index: -1;
+    animation: deslocamentoDir 1.2s;
+}
+
+/* ANIMAÇÃO DE SOBREPOSIÇÃO */
+
+@keyframes deslocamentoEsq {
+    0% {
+        left: 0;
+        opacity: 1;
+        z-index: 12;
+    }
+
+    25% {
+        left: -20px;
+        opacity: 0.1;
+    }
+
+    50% {
+        left: -80px;
+        opacity: 0.1;
+    }
+    
+    100% {
+        left: -110px;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes deslocamentoDir {
+
+    0% {
+        left: 0;
+        z-index: 12;
+        opacity: 1;
+    }
+
+    25% {
+        left: 80px;
+        opacity: 0.2;
+    }
+
+    50% {   
+        left: 100px;
+        opacity: 0.1;
+    }
+
+    100% {
+        left: 110px;
+        z-index: -1;
+        opacity: 0;
+    }
+}
+
+
+/* ANIMAÇÃO DE TRANSAÇÃO DE TELA */ 
+
+@keyframes slidein {
+
+    0% {
+        left: 0;
+        width: 40%;
+    }
+
+    25% {
+        left: 5%;
+        width: 50%;
+    }
+
+    50% {
+        left: 25%;
+        width: 60%;
+    }
+
+    75% {
+        left: 45%;
+        width: 50%;
+    }
+
+    100% {  
+        left: 60%;
+        width: 40%;
+    }
+} 
+
+/* ANIMAÇÃO DE VOLTA */
+
+@keyframes slideout {
+
+    0% {
+        left: 60%;
+        width: 40%;
+    }
+
+    25% {
+        left: 45%;
+        width: 50%;
+    }
+
+    50% {
+        left: 25%;
+        width: 60%;
+    }
+
+    75% {
+        left: 5%;
+        width: 50%;
+    }
+
+    100% {  
+        left: 0;
+        width: 40%;
+    }
+} 
+
+/* OPACIDADE DO FORM*/
+
+body {
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+.first-column {
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+.second-column {
+    animation-name: fade;
+    animation-duration: 5s;
+}
+
+.title-primary {
+    animation-name: fade;
+    animation-duration: 5s;
+  
+}
+
+.title-second {
+    animation-name: fade;
+    animation-duration: 5s;
+}
+
+.second-content::before {
+    animation-name: fade;
+    animation-duration: 5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes move {
+    from {
+      opacity: 0;
+      transform: translateX(-35%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+  
+@keyframes fade {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
